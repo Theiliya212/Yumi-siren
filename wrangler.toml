@@ -10,7 +10,7 @@ binding = "SIREN"
 id = "6008b36d7fc448baa1c01966c66bc6c2"
 
 [build]
-# We added '@^0.1' to the command below to fix the version error
+# The fix is here: we are forcing version 0.1
 command = "cargo install worker-build@^0.1 && worker-build --release"
 
 [env.dev]
