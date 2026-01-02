@@ -10,11 +10,11 @@ binding = "SIREN"
 id = "6008b36d7fc448baa1c01966c66bc6c2"
 
 [build]
-# The fix is here: we are forcing version 0.1
-command = "cargo install worker-build@^0.1 && worker-build --release"
+# We are pinning this to version 0.7.2 to match your code
+command = "cargo install worker-build --version 0.7.2 && worker-build --release"
 
 [env.dev]
-build = { command = "cargo install worker-build@^0.1 && worker-build --dev" }
+build = { command = "cargo install worker-build --version 0.7.2 && worker-build --dev" }
 
 [vars]
 UUID = "14f1fd17-1ce1-4a2c-b22a-8821d37e461d"
