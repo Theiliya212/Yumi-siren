@@ -10,11 +10,11 @@ binding = "SIREN"
 id = "6008b36d7fc448baa1c01966c66bc6c2"
 
 [build]
-# The fix: We delete the lock file (rm -f Cargo.lock) so it forces a fresh start
-command = "rm -f Cargo.lock && cargo install worker-build && worker-build --release"
+# The Fix: 'cargo clean' deletes the old cache so it stops finding version 0.5.0
+command = "cargo clean && cargo install worker-build && worker-build --release"
 
 [env.dev]
-build = { command = "rm -f Cargo.lock && cargo install worker-build && worker-build --dev" }
+build = { command = "cargo clean && cargo install worker-build && worker-build --dev" }
 
 [vars]
 UUID = "14f1fd17-1ce1-4a2c-b22a-8821d37e461d"
