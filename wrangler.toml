@@ -10,10 +10,11 @@ binding = "SIREN"
 id = "6008b36d7fc448baa1c01966c66bc6c2"
 
 [build]
-command = "cargo install worker-build && worker-build --release"
+# We added '@^0.1' to the command below to fix the version error
+command = "cargo install worker-build@^0.1 && worker-build --release"
 
 [env.dev]
-build = { command = "cargo install worker-build && worker-build --dev" }
+build = { command = "cargo install worker-build@^0.1 && worker-build --dev" }
 
 [vars]
 UUID = "14f1fd17-1ce1-4a2c-b22a-8821d37e461d"
